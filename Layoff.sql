@@ -6,11 +6,11 @@ select * from layoffs;
 -- 3. Null values or blank values, (should I populate it or not)
 -- 4. remove unncecesary rows and columns ( should i or should not)   
 
-CREATE TABLE layoffs_staging LIKE layoffs;
+CREATE TABLE layoffs_staging LIKE layoffs; -- CREATED A LOOKALIKE TABLE TO WORK ON THE RAW DATA
 
 Insert layoffs_staging Select * from layoffs;
 
-Select *, ROW_NUMBER() OVER (PARTITION BY company, industry, 
+Select *, ROW_NUMBER() OVER (PARTITION BY company, industry, -- used row number to identify duplicates (anything >1 might be a duplicate)
 total_laid_off, 'date') as Row_num
 from layoffs_staging;
 
@@ -20,7 +20,7 @@ Select *, ROW_NUMBER() OVER (PARTITION BY company, location, industry
 , total_laid_off, percentage_laid_off, `date`, stage, country, funds_raised_millions) as Row_num
 from layoffs_staging
 )
-Select * from duplicate_CTE where Row_num > 1;
+Select * from duplicate_CTE where Row_num > 1; --used CTE to Select duplicate values from the same table
 
 Select * from layoffs_staging;
 
@@ -36,7 +36,7 @@ CREATE TABLE `layoffs_staging2` (
   `country` text,
   `funds_raised_millions` int DEFAULT NULL,
   `Row_num` INT
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci; -- created a 2nd table to include Row_num and delete the duplicates
 
 
 INSERT INTO layoffs_staging2 
@@ -63,7 +63,7 @@ select * from layoffs_staging2
  where location like 'D%';
 
 update layoffs_staging2 
-set industry='Crypto' where industry like 'Crypto%';
+set industry='Crypto' where industry like 'Crypto%'; -- updated the industry having the name as cryptoCurrency and Crpoto Currecny to CRYPTO
 
 select DISTINCT(country)
  from layoffs_staging2 order by country;
@@ -75,12 +75,12 @@ Select `date`, str_to_date(`date`, '%m/%d/%Y')
 from layoffs_staging2;
 
 update layoffs_staging2 
-set `date`= str_to_date(`date`, '%m/%d/%Y');
+set `date`= str_to_date(`date`, '%m/%d/%Y'); -- CHANGED THE DATE FORMAT FROM TEXT TO DATE
 
 alter table layoffs_staging2 
 MODIFY column `date` DATE; 
 
--- fixing and findind null
+-- fixing and finding null
 
 SELECT * FROM layoffs_staging2
 WHERE total_laid_off is NULL
@@ -89,7 +89,7 @@ and percentage_laid_off is NULL;
 select * from layoffs_staging2 where company like 'airbnb';
 
 Select * from layoffs_staging2 
-where industry is null or industry =''; -- try to populate thje missing values if possible
+where industry is null or industry =''; -- try to populate the missing values if possible
 
 sELECT * FROM layoffs_staging2 t1 join layoffs_staging2 t2 ON t1.company = t2.company
 and t1.location=t2.location
