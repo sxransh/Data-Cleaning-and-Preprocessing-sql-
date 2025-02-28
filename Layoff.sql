@@ -3,7 +3,7 @@
 select * from layoffs;
 -- 1. remove duplicates
 -- 2. standardize data
--- 3. Nul values or blank values, should we populate it or not
+-- 3. Null values or blank values, (should I populate it or not)
 -- 4. remove unncecesary rows and columns ( should i or should not)   
 
 CREATE TABLE layoffs_staging LIKE layoffs;
@@ -49,7 +49,7 @@ Delete from layoffs_staging2 where Row_num>1;
 
 Select * from layoffs_staging2;
 
--- STANDARDIZATION DATA
+-- STANDARDIZATION OF DATA
 
 Select company, TRIM(company) from layoffs_staging2;
 
