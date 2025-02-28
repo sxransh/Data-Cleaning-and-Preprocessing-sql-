@@ -1,7 +1,8 @@
 # Data-Cleaning-and-Preprocessing-sql-
-THIS IS ONE OF MY FIRST SQL projects. I standardized and cleaned a raw dataset of layoffs worldwide using MySQl.
 
-THE Layoff Sql includes my script. 
+One of my first SQL projects, I standardized and cleaned a raw dataset of layoffs worldwide using CTEs, Join, WindowFunctions, etc.
+
+THE Layoff Sql script and the database are included. 
 -------------------------------------------------------------------------------------
 
 Trimmed the extra spaces in the company's names.
