@@ -1,6 +1,6 @@
 # Data-Cleaning-and-Preprocessing-sql-
 
-One of my first SQL projects, I standardized and cleaned a raw dataset of layoffs worldwide using CTEs, Join, WindowFunctions, etc.
+One of my first SQL projects, I cleaned a 2K+ rows raw dataset of layoffs worldwide using CTEs, Join, WindowFunctions, etc.
 
 The Layoff Sql script and the database are included. 
 
