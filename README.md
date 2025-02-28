@@ -16,5 +16,6 @@ THE DATA BEFORE included columns irrelevant to the Layoffs with no record of lay
 
 Fixed it by deleting the NULL records from the total_laid_off and percentage_laid_off.
 --
+![Screenshot 2025-02-28 150522](https://github.com/user-attachments/assets/3794cda6-737d-444a-b4e1-3c90affe8f44)
 
 ![Screenshot 2025-02-28 144338](https://github.com/user-attachments/assets/c88b6df7-8cb1-4b74-b4f4-fae4c83dd9cb)
