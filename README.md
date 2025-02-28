@@ -2,7 +2,7 @@
 
 One of my first SQL projects, I standardized and cleaned a raw dataset of layoffs worldwide using CTEs, Join, WindowFunctions, etc.
 
-THE Layoff Sql script and the database are included. 
+The Layoff Sql script and the database are included. 
 
 Trimmed the extra spaces in the company's names.
 --
