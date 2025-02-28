@@ -1,5 +1,5 @@
 # Data-Cleaning-and-Preprocessing-sql-
-Standardized and cleaned a raw dataset of layoffs worldwide using MySQl.
+THIS IS ONE OF MY FIRST SQL projects. I standardized and cleaned a raw dataset of layoffs worldwide using MySQl.
 
 THE Layoff Sql includes my script. 
 -------------------------------------------------------------------------------------
