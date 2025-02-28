@@ -91,7 +91,7 @@ select * from layoffs_staging2 where company like 'airbnb';
 Select * from layoffs_staging2 
 where industry is null or industry =''; -- try to populate the missing values if possible
 
-sELECT * FROM layoffs_staging2 t1 join layoffs_staging2 t2 ON t1.company = t2.company
+sELECT * FROM layoffs_staging2 t1 join layoffs_staging2 t2 ON t1.company = t2.company -- identified the few records with the same company where industry column was empty 
 and t1.location=t2.location
 where (t1.industry is null OR t1.industry='')and t2.industry is not null;
 
