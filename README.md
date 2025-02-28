@@ -2,6 +2,7 @@
 Standardized and cleaned a raw dataset of layoffs worldwide using MySQl.
 
 THE Layoff Sql includes my script. 
+-------------------------------------------------------------------------------------
 
 Trimmed the extra spaces in the company's names.
 
