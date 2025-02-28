@@ -4,7 +4,7 @@ One of my first SQL projects, I cleaned a 2K+ rows raw dataset of layoffs worldw
 
 The Layoff Sql script and the database are included. 
 
-Trimmed the extra spaces in the company's names.
+Trimmed the extra spaces in the company's names and changed the date format from text to date.
 --
 
 ![Screenshot 2025-02-28 144544](https://github.com/user-attachments/assets/be82d0df-16c6-4f7e-8b93-31325ccb2eeb)
